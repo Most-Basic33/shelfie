@@ -40,8 +40,8 @@ class Form extends Component {
                     />
                     <input
                         type='number'
-                        name='number'
                         placeholder='Price'
+                        name='price'
                         value={this.state.price}
                         onChange={this.handleChange}
                     />
