@@ -14,7 +14,7 @@ class Header extends Component{
         <h1>
         Shelfie 
          <Link to='/product'><button>Dashboard</button></Link> 
-           <button>Add Inventory </button>
+          <Link to='/about'> <button>Add Inventory </button></Link>
            </h1>
         </section>
         </header>

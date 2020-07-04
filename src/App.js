@@ -22,9 +22,8 @@ class App extends Component {
     },1333);
    
   }
-componentDidUpdate(){
 
-}
+  
 
   getInventory = () => {
     const { url } = this.state

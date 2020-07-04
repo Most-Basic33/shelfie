@@ -4,6 +4,7 @@ import Product from './Components/Product/Product'
 import Form from './Components/Form/Form';
 import ProductInput from './Components/Product/ProductInput';
 import Dashboard from './Components/Dashboard/Dashboard'
+import About from './Components/About/About';
  
 
 //Its changing url's it's just not doing anything
@@ -12,9 +13,9 @@ import Dashboard from './Components/Dashboard/Dashboard'
 export default (
     <Switch>
        
-        <Route component={Form} exact path = '/' />
-        <Route component={Product} path = '/product'/>
-        <Route component={ProductInput} path= '/product/:id' />
+        <Route component={About} path = '/about' />
+        {/* <Route component={Product} path = '/product'/>
+        <Route component={ProductInput} path= '/product/:id' /> */}
 
     </Switch>
 )

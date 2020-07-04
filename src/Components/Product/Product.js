@@ -37,26 +37,16 @@ const body = {name,price,img}
          axios.put(`${url}${this.props.id}`,body)
             .then(() => {
                 this.handleClear()
+                this.props.getInventory()
             })
 
-     }
-// const body = {};
-//         if(this.state.name == null){
-// body.name = name;
-//         }else if(this.state.price != null){
-//             body.price = price
-//         }else if(this.state.url != null){
-//             body.img = img
-//         }
-//         console.log(body)
-     
-       
-    
+     }    
     handleClear = () => {
         this.setState({
             name: '', price: 0, img: ''
         })
     }
+   
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value

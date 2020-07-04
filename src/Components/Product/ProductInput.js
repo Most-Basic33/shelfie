@@ -32,7 +32,7 @@ import React, {Component} from 'react';
                         type='number'
                         placeholder='Price'
                         name='price'
-                        value={this.props.price}
+                        value={+this.props.price}
                         onChange={this.props.handleChange}
                     />
                     <input
