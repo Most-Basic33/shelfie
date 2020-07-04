@@ -51,6 +51,7 @@ axios.post(`${url}`, body)
             <form>
                 <div className="form-box">
                 <div className="input-box">
+                <span>Product Name:</span>
                     <input
                         type='text'
                         placeholder='Product Name'
@@ -58,6 +59,7 @@ axios.post(`${url}`, body)
                         value={this.state.name}
                         onChange={this.handleChange}
                     />
+                     <span>Product Price:</span>
                     <input
                         type='number'
                         placeholder='Price'
@@ -65,6 +67,7 @@ axios.post(`${url}`, body)
                         value={this.state.price}
                         onChange={this.handleChange}
                     />
+                     <span>Product URL:</span>
                     <input
                         type='text'
                         placeholder='Img URL'

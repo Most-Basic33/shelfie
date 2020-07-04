@@ -29,6 +29,7 @@ this.setState({
        
         return(
             <div>
+            <img src={this.props.img} alt="pictures of what we selling" />
                   <input
                         type='text'
                         placeholder='Product Name'

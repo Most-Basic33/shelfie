@@ -15,7 +15,7 @@ const Dashboard = (props) => {
             id={item.id} 
             inventory={item} 
             key={index} 
-                getInventory={props.getInventory}
+            getInventory={props.getInventory}
             />
         )
     })
