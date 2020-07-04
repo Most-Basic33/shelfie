@@ -48,7 +48,7 @@ class App extends Component {
            inventory={this.state.inventory} />
             <Form getInventory={this.getInventory} />
         </main> 
-  
+  {routes}
       </div>
       
 
