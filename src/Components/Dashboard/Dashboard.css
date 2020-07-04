@@ -1,0 +1,8 @@
+.dashboard{
+    width: 50vh;
+    height: 50vh;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

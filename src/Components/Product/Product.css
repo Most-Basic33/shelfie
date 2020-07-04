@@ -1,0 +1,21 @@
+.products{
+    border: 1px solid black;
+   width: 40vh;
+    height:15vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product-box{
+    display: flex;
+    width: 50vh;
+    justify-content: center;
+    align-content: center;
+    background-color: azure;
+   
+
+}
+img{
+    
+}

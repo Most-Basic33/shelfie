@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Form.css'
+import axios from 'axios'
 
 
 class Form extends Component {
@@ -6,6 +8,7 @@ class Form extends Component {
         super(props);
 
         this.state = {
+            url: '/api/inventory/',
             name: '',
             price: 0,
             imgurl: ''
@@ -14,10 +17,14 @@ class Form extends Component {
     handleChange = (e) => {
         console.log(e.target.value)
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: +e.target.value
         })
 
     }
+componentDidUpdate(){
+    //this.props.getInventory();
+}
+
     handleSubmit = (e) => {
         e.preventDefault()
     }
@@ -26,11 +33,23 @@ class Form extends Component {
             name: '', price: 0, imgurl: ''
         })
     }
+addNewProduct=()=>{
+const {url, name, price, imgurl} = this.state;
+const body = {name, price, imgurl}
+console.log(body)
+axios.post(`${url}`, body)
+.then(() => {
+ this.handleClear();
+})
+
+}
+
 
     render() {
         return (
             <form>
-                <div>
+                <div className="form-box">
+                <div className="input-box">
                     <input
                         type='text'
                         placeholder='Product Name'
@@ -52,10 +71,13 @@ class Form extends Component {
                         value={this.state.imgurl}
                         onChange={this.handleChange}
                     />
+                    </div>
                 </div>
-                <div className='button_form'>
-                    <button>Add</button>
+                 
+                <div className='button-box'>
+                    <button onClick={this.addNewProduct} >Add</button>
                     <button>Cancel</button>
+                    
                 </div>
 
             </form>

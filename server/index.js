@@ -16,7 +16,11 @@ massive({
 })
 
 //Endpoints
-app.get('/api/products', ctrl.getInventory)
+app.get('/api/inventory', ctrl.getInventory);
+app.get('/api/inventory/:id', ctrl.getInventoryItem)
+app.post('/api/inventory', ctrl.addInventory);
+app.delete('/api/inventory/:id', ctrl.deleteInventory);
+app.put('/api/inventory/:id', ctrl.updateInventoryPrice)//update price
 
 
 app.listen(SERVER_PORT, () => console.log(`Listen To The Smooth Sounds of 3 double 3: ${SERVER_PORT}fm`))

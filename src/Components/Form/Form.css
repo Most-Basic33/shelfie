@@ -1,0 +1,15 @@
+form{
+   width: 50vh;
+   height: 50vh;
+   background-color: azure;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.form-box{
+background-color: aquamarine;
+width: 25vh;
+height: 25vh;
+display: flex;
+}
