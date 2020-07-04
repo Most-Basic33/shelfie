@@ -1,7 +1,7 @@
  import React, {Component} from 'react';
  import './Product.css'
  import axios from 'axios'
- import Product_Input from './Product_Input'
+ import ProductInput from './ProductInput'
 
  class Product extends Component{  
     constructor(props){
@@ -49,9 +49,10 @@
           }
     //had to temporaly take out img to fit stuff
     render(){
+        
 return(
     <div>
-     {this.state.editMode?<Product_Input />:null}
+     {this.state.editMode?<ProductInput />:null}
     <div className='product-box'>
     <div className='products'>
     <h4>ID: {this.props.id}</h4>

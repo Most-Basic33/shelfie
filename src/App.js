@@ -15,17 +15,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { inventory, url } = this.state
-    axios.get(`${url}`)
-      .then(res => {
-        this.setState({ inventory: res.data })
-      })
-      .catch(err => console.log('error at APP-axios call component did mount//didnt get data'))
+    this.getInventory()
   }
   
 
   getInventory = () => {
-    const { inventory, url } = this.state
+    const { url } = this.state
     axios.get(`${url}`)
       .then(res => {
         this.setState({ inventory: res.data })
@@ -34,10 +29,10 @@ class App extends Component {
   }
   
   render() {
-    
+    console.log(this.state.inventory)
     return (
       <div className='app'>
-      
+      <Header />
         <main className='mainBox'>
           <Dashboard 
           getInventory={this.getInventory} 

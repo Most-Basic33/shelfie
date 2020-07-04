@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
  import './Product.css'
- import axios from 'axios';
+
   
 
- class Product_Input extends Component{  
+ class ProductInput extends Component{  
     constructor(props){
         super(props);
         this.state ={
@@ -26,7 +26,7 @@ this.setState({
 })
     }
     render(){
-        console.log(this.props)
+       
         return(
             <div>
                   <input
@@ -56,4 +56,4 @@ this.setState({
         )
     }
 }
-    export default Product_Input
+    export default ProductInput
