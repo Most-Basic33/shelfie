@@ -6,25 +6,16 @@ import React, {Component} from 'react';
  class ProductInput extends Component{  
     constructor(props){
         super(props);
-        this.state ={
-            url: '/api/inventory/',
-            name:'',
-            price:'',
-            imgurl:'',
-            editMode: false
+       
         }
-    } 
-    toggleForm=()=>{
-        this.setState({
-            editMode: !this.state.editMode
-        })
-    }
+     
     
-    handleChange=(e)=>{
-this.setState({
-    [e.target.name]: e.target.value
-})
-    }
+  
+//   handleChange=(e)=>{
+// this.setState({
+//     [e.target.name]: e.target.value
+// })
+    
     render(){
        
         return(
@@ -34,27 +25,27 @@ this.setState({
                         type='text'
                         placeholder='Product Name'
                         name='name'
-                        value={this.state.name}
-                        onChange={this.handleChange}
+                        value={this.props.name}
+                        onChange={this.props.handleChange}
                     />
                     <input
                         type='number'
                         placeholder='Price'
                         name='price'
-                        value={this.state.price}
-                        onChange={this.handleChange}
+                        value={this.props.price}
+                        onChange={this.props.handleChange}
                     />
                     <input
                         type='text'
                         placeholder='Img URL'
-                        name='imgurl'
-                        value={this.state.imgurl}
-                        onChange={this.handleChange}
+                        name='img'
+                        value={this.props.img}
+                        onChange={this.props.handleChange}
                     />
-                    <button>Update</button>
+                    <button onClick={this.props.editItem}>Update</button>
                     </div>
            
         )
     }
-}
+ }
     export default ProductInput

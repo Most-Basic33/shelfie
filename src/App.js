@@ -4,6 +4,8 @@ import Header from './Components/Header/Header';
 import axios from 'axios'
 import Form from './Components/Form/Form';
 import Dashboard from './Components/Dashboard/Dashboard';
+import routes from './routes'
+
 
 class App extends Component {
   constructor(props) {
@@ -13,11 +15,16 @@ class App extends Component {
       inventory: []
     }
   }
-
+//set a timeout so my db always loads without me having to restart
   componentDidMount() {
-    this.getInventory()
+    setTimeout(() => {
+      this.getInventory()
+    },1333);
+   
   }
-  
+componentDidUpdate(){
+
+}
 
   getInventory = () => {
     const { url } = this.state
@@ -27,19 +34,25 @@ class App extends Component {
       })
       .catch(err => console.log(err,'error at APP-axios call component did mount//didnt get data'))
   }
-  
+  //CAN'T ADD ROUTES OR MAP BECOMES UNDEFINED
   render() {
     console.log(this.state.inventory)
+    
     return (
+    
       <div className='app'>
+     
       <Header />
         <main className='mainBox'>
           <Dashboard 
           getInventory={this.getInventory} 
            inventory={this.state.inventory} />
             <Form getInventory={this.getInventory} />
-        </main>
+        </main> 
+  
       </div>
+      
+
     )
   }
 }

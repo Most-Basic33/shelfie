@@ -8,16 +8,17 @@ class Product extends Component {
         super(props);
         this.state = {
             url: '/api/inventory/',
-            name: '',
-            price: '',
-            imgurl: '',
+            name: this.props.inventory.name,
+            price: +this.props.inventory.price,
+            img: this.props.inventory.img,
             editMode: false
 
         }
     }
     toggleForm = () => {
         this.setState({
-            editMode: !this.state.editMode
+            editMode: !this.state.editMode,
+
         })
     }
     deleteItem = () => {
@@ -28,18 +29,32 @@ class Product extends Component {
             })
             .catch(err => console.log(err, "error deleting item"))
     }
-    editItem = () => {
-        const { url } = this.state
+    //Trying to figure out how to edit items then do an axios database update
+     editItem = () => {
+        const { url, name, price, img } = this.state
         this.toggleForm()
+const body = {name,price,img}
+         axios.put(`${url}${this.props.id}`,body)
+            .then(() => {
+                this.handleClear()
+            })
 
-        // axios.put(`${url}${this.props.id}`)
-        //     .then(() => {
-        //         this.handleClear()
-        //     })
-    }
+     }
+// const body = {};
+//         if(this.state.name == null){
+// body.name = name;
+//         }else if(this.state.price != null){
+//             body.price = price
+//         }else if(this.state.url != null){
+//             body.img = img
+//         }
+//         console.log(body)
+     
+       
+    
     handleClear = () => {
         this.setState({
-            name: '', price: 0, imgurl: ''
+            name: '', price: 0, img: ''
         })
     }
     handleChange = (e) => {
@@ -52,7 +67,12 @@ class Product extends Component {
 
         return (
             <div>
-                {this.state.editMode ? <ProductInput img={this.props.inventory.img}
+                {this.state.editMode ? <ProductInput 
+                name={this.state.name}
+                price={this.state.price}
+                editItem={this.editItem}
+                handleChange={this.handleChange}
+                 img={this.state.img}
                     toggleForm={this.toggleForm}
                 /> : null}
                 <div className='product-box'>
@@ -63,7 +83,7 @@ class Product extends Component {
                         <img src={this.props.inventory.img} alt='The List Of Items We Have For Sale' />
                     </div>
                     <button onClick={this.deleteItem}>Delete</button>
-                    <button onClick={this.editItem} >Edit</button>
+                    <button onClick={this.toggleForm} >Edit</button>
                 </div>
 
             </div>

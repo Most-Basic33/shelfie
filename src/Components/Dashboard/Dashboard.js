@@ -1,21 +1,27 @@
-import React from 'react';
-
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
 import './Dashboard.css';
 import Product from '../Product/Product';
 
 
-const Dashboard = (props) => {
+class Dashboard extends Component {
   //  console.log(props)
-    const mappInventory = props.inventory.map((item, index) => {
+  constructor(props){
+      super(props);
+  }
+  //I cannot use routes because everytime I try to link to this page
+  //I get an error saying my map inventory from db is undefined
+  render(){
+  const mappInventory = this.props.inventory.map((item, index) => {
         return (
       
             <Product  
-            deleteItem={props.deleteItem} 
-            editItem={props.editItem} 
+            deleteItem={this.props.deleteItem} 
+            editItem={this.props.editItem} 
             id={item.id} 
             inventory={item} 
             key={index} 
-            getInventory={props.getInventory}
+            getInventory={this.props.getInventory}
             />
         )
     })
@@ -25,4 +31,6 @@ const Dashboard = (props) => {
         </div>
     )
 }
+}
+
 export default Dashboard

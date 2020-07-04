@@ -1,15 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Header.css'
+import {Link} from 'react-router-dom'
 
-const Header = () =>{
+class Header extends Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
     return(
         <header>
        
         <section>
-        Shelfie <button>Dashboard</button>
+        <h1>
+        Shelfie 
+         <Link to='/product'><button>Dashboard</button></Link> 
            <button>Add Inventory </button>
+           </h1>
         </section>
         </header>
     )
+    }
 }
 export default Header;

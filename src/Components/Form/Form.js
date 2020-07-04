@@ -21,9 +21,7 @@ class Form extends Component {
         })
 
     }
-componentDidUpdate(){
-    //this.props.getInventory();
-}
+
 
     handleSubmit = (e) => {
         e.preventDefault()
