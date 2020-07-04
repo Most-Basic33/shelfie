@@ -13,14 +13,7 @@ class App extends Component {
       inventory: []
     }
   }
-//   deleteItem=()=>{
-//     const {url, inventory} = this.state
-//     console.log(this.state.inventory, "inventory")
-//     console.log(url, inventory.id)
-// console.log('delete works')
- 
-//   }
-  
+
   componentDidMount() {
     const { inventory, url } = this.state
     axios.get(`${url}`)
@@ -41,11 +34,11 @@ class App extends Component {
   }
   
   render() {
+    
     return (
       <div className='app'>
       
         <main className='mainBox'>
-         
           <Dashboard 
           getInventory={this.getInventory} 
            inventory={this.state.inventory} />

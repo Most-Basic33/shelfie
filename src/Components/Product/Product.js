@@ -51,18 +51,18 @@
     render(){
 return(
     <div>
+     {this.state.editMode?<Product_Input />:null}
     <div className='product-box'>
     <div className='products'>
     <h4>ID: {this.props.id}</h4>
     <h3>{this.props.inventory.name}</h3>
     <h3>{this.props.inventory.price}</h3>
-    <img src={this.props.inventory.img} />
+    <img src={this.props.inventory.img} alt='The List Of Items We Have For Sale'/>
     </div>
-    
     <button onClick={this.deleteItem}>Delete</button>
     <button onClick={this.editItem} >Edit</button>
     </div>
-    {this.state.editMode?<Product_Input />:null}
+
     </div>
 )
  }

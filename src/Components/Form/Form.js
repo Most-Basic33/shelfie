@@ -11,13 +11,13 @@ class Form extends Component {
             url: '/api/inventory/',
             name: '',
             price: 0,
-            imgurl: ''
+            img: ''
         }
     }
     handleChange = (e) => {
         console.log(e.target.value)
         this.setState({
-            [e.target.name]: +e.target.value
+            [e.target.name]: e.target.value
         })
 
     }
@@ -30,12 +30,13 @@ componentDidUpdate(){
     }
     handleClear = () => {
         this.setState({
-            name: '', price: 0, imgurl: ''
+            name: '', price: 0, img: ''
         })
     }
 addNewProduct=()=>{
-const {url, name, price, imgurl} = this.state;
-const body = {name, price, imgurl}
+const {url, name, price, img} = this.state;
+
+const body = {name, price, img}
 console.log(body)
 axios.post(`${url}`, body)
 .then(() => {
@@ -67,8 +68,8 @@ axios.post(`${url}`, body)
                     <input
                         type='text'
                         placeholder='Img URL'
-                        name='imgurl'
-                        value={this.state.imgurl}
+                        name='img'
+                        value={this.state.img}
                         onChange={this.handleChange}
                     />
                     </div>

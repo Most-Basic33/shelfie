@@ -5,13 +5,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+ 
 
   
 }
 .mainBox{
-  height: 80vh;
+  height: 60vh;
   width: 100%;
   display: flex;
-  
+ overflow: auto;
   
 }
