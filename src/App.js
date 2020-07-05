@@ -6,8 +6,6 @@ import Form from './Components/Form/Form';
 import Dashboard from './Components/Dashboard/Dashboard';
 import routes from './routes'
 
-import Home from './Components/Home/Home';
-
 class App extends Component {
   constructor(props) {
     super(props)
