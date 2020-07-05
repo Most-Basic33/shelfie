@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom'
 import './Dashboard.css';
 import Product from '../Product/Product';
 
 
 class Dashboard extends Component {
   //  console.log(props)
-  constructor(props){
-      super(props);
-  }
+ 
   //I cannot use routes because everytime I try to link to this page
   //I get an error saying my map inventory from db is undefined
   render(){

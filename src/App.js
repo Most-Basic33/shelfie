@@ -6,6 +6,7 @@ import Form from './Components/Form/Form';
 import Dashboard from './Components/Dashboard/Dashboard';
 import routes from './routes'
 
+import Home from './Components/Home/Home';
 
 class App extends Component {
   constructor(props) {
@@ -40,15 +41,16 @@ class App extends Component {
     return (
     
       <div className='app'>
-     
+     {routes}
       <Header />
         <main className='mainBox'>
+       
           <Dashboard 
           getInventory={this.getInventory} 
            inventory={this.state.inventory} />
             <Form getInventory={this.getInventory} />
         </main> 
-  {routes}
+  
       </div>
       
 

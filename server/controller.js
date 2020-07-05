@@ -29,6 +29,15 @@ module.exports ={
             .catch(err => res.status(500).send(err, "Delete is broken in controller"))
         
     },
+    getInventoryByName:(req, res) =>{
+const db = req.app.get('db')
+const {name} = req.params;
+
+db.get_inventory_name(name)
+.then(item=>res.status(200).send(item))
+.catch(err=>console.log(err))
+
+    },
     getInventoryItem: (req, res) =>{
         const db = req.app.get('db');
         const {id} = req.params;

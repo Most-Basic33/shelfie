@@ -1,10 +1,9 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Product from './Components/Product/Product'
-import Form from './Components/Form/Form';
-import ProductInput from './Components/Product/ProductInput';
-import Dashboard from './Components/Dashboard/Dashboard'
 import About from './Components/About/About';
+import Search from './Components/Search/Search';
+  
+ 
  
 
 //Its changing url's it's just not doing anything
@@ -12,10 +11,9 @@ import About from './Components/About/About';
 //is that normal? Going to sleep it's 3am
 export default (
     <Switch>
-       
-        <Route component={About} path = '/about' />
-        {/* <Route component={Product} path = '/product'/>
-        <Route component={ProductInput} path= '/product/:id' /> */}
+      
+        <Route component={About} exact path = '/about' />
+       <Route component={Search} exact path = '/search' />
 
     </Switch>
 )

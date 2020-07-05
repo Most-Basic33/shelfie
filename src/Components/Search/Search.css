@@ -1,0 +1,8 @@
+.forms{
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+}
+form{
+    margin: 20px;
+}
