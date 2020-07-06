@@ -33,8 +33,9 @@ class App extends Component {
       .catch(err => console.log(err,'error at APP-axios call component did mount//didnt get data'))
   }
   //CAN'T ADD ROUTES OR MAP BECOMES UNDEFINED
+  //I think because I'm passing it props from app.js so how is it logial that I can route there?
   render() {
-    console.log(this.state.inventory)
+   console.log(this.state.inventory)
     
     return (
     

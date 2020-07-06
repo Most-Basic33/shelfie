@@ -1,8 +1,16 @@
 .forms{
     display: flex;
     height: 40vh;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 form{
     margin: 20px;
+}
+.search-box{
+    top:0px;
+    right: auto;
+    left: auto;
+    position: absolute;
+    padding: 10px;
+   
 }

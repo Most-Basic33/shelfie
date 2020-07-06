@@ -1,6 +1,9 @@
 .about{
-    height: 25vh;
+    height: 50vh;
     background-color: red;
     color: aliceblue;
     font-size: 40px;
+    display:block;
+    
 }
+ 

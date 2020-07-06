@@ -2,15 +2,8 @@ import React from 'react';
  import './Product.css'
 
   
-
+//made all input required  in the add form duh
  const ProductInput =(props)=>{  
-    
-     
-
-//   handleChange=(e)=>{
-// this.setState({
-//     [e.target.name]: e.target.value
-// })
         return(
             <div>
             <img src={props.img} alt="pictures of what we selling" />
@@ -18,6 +11,7 @@ import React from 'react';
                         type='text'
                         placeholder='Product Name'
                         name='name'
+                        required
                         value={props.name}
                         onChange={props.handleChange}
                     />
@@ -25,6 +19,7 @@ import React from 'react';
                         type='number'
                         placeholder='Price'
                         name='price'
+                        required
                         value={+props.price}
                         onChange={props.handleChange}
                     />
@@ -32,6 +27,7 @@ import React from 'react';
                         type='text'
                         placeholder='Img URL'
                         name='img'
+                        required
                         value={props.img}
                         onChange={props.handleChange}
                     />

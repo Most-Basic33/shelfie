@@ -4,6 +4,7 @@ import axios from 'axios'
 import './Search.css'
 
 
+
 class Search extends Component {
     constructor() {
         super()
@@ -21,14 +22,15 @@ class Search extends Component {
     }
     searchById = () => {
         const { url, id } = this.state
+       //const filerted=[]
         axios.get(`${url}${id}`)
             .then(res => {
                 this.setState({
                     product: res.data
-                })
-            })
-            .catch(err => console.log(err, 'error in search by ID'))
-    }
+                })}).catch(err=>console.log(err))
+ 
+            }
+    
     searchByName = () => {
         const { name } = this.state
         axios.get(`/api/inventorys/${name}`)
@@ -42,23 +44,19 @@ class Search extends Component {
     goBack = () => {
         this.props.history.goBack()
     }
+
     render() {
-
-
-
-
-
-
-        console.log(this.state.product[0])
+    console.log(this.state.product[0])
+       
         return (
             <Link className='forms' to='/search'>
-                <div >
-                    <h3>id:{this.state.product.id}</h3>
-                    <h3>name:{this.state.product.name}</h3>
-                    <h3>price:{this.state.product.price}</h3>
-                          Pic:<img src={this.state.product.img} alt=' Search Item' />
-
-                </div>
+               {this.state.product[0]?
+               <div className='search-box'>
+               <h3>{this.state.product[0].id}</h3>
+               <h3>{this.state.product[0].name}</h3>
+               <h3>{this.state.product[0].price}</h3>
+               <img src={this.state.product[0].img} alt="product info" />
+               </div>:null}
                 <form>
 
                     <input
@@ -80,7 +78,7 @@ class Search extends Component {
                 </form>
                 <div>
                     <div>
-                        <button onClick={this.goBack} >Return Home</button>
+                        <button onClick={this.goBack} >Go Back</button>
                     </div>
                 </div>
             </Link>

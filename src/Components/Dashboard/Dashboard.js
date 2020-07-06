@@ -4,6 +4,7 @@ import Product from '../Product/Product';
 
 
 class Dashboard extends Component {
+    
   //  console.log(props)
  
   //I cannot use routes because everytime I try to link to this page

@@ -12,8 +12,8 @@ import Search from './Components/Search/Search';
 export default (
     <Switch>
       
-        <Route component={About} exact path = '/about' />
-       <Route component={Search} exact path = '/search' />
+        <Route component={About}  path = '/about' />
+       <Route component={Search}   path = '/search' />
 
     </Switch>
 )

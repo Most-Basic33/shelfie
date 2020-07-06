@@ -29,11 +29,13 @@ class Product extends Component {
             })
             .catch(err => console.log(err, "error deleting item"))
     }
-    //Trying to figure out how to edit items then do an axios database update
+    //  wonder if it's better to do Object Assign here or just way I did it by commenting it out...
      editItem = () => {
         const { url, name, price, img } = this.state
         this.toggleForm()
-const body = {name,price,img}
+        let body={}
+//const body = {name,price,img}
+  body = Object.assign(body, name,price,img)
          axios.put(`${url}${this.props.id}`,body)
             .then(() => {
                 this.handleClear()
