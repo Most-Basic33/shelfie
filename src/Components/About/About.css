@@ -1,9 +1,18 @@
 .about{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRAV1Nb6OxUflv_--yYMP_BrRPy_yuK_Tt9yw&usqp=CAU');
     height: 50vh;
-    background-color: red;
-    color: aliceblue;
+    color: orange;
     font-size: 40px;
-    display:block;
-    
+    display:block; 
 }
  
+.span1{
+    text-decoration: underline;
+    font-weight: 900;
+    color: purple;
+}
+.big-button{
+    height: 50px;
+    width: 100px;
+
+}

@@ -17,9 +17,7 @@ class Product extends Component {
     }
     toggleForm = () => {
         this.setState({
-            editMode: !this.state.editMode,
-
-        })
+            editMode: !this.state.editMode, })
     }
     deleteItem = () => {
         const { url } = this.state

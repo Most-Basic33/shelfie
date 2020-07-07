@@ -14,7 +14,7 @@ class App extends Component {
       inventory: []
     }
   }
-//set a timeout so my db always loads without me having to restart
+
   componentDidMount() {
     setTimeout(() => {
       this.getInventory()
@@ -32,24 +32,23 @@ class App extends Component {
       })
       .catch(err => console.log(err,'error at APP-axios call component did mount//didnt get data'))
   }
-  //CAN'T ADD ROUTES OR MAP BECOMES UNDEFINED
-  //I think because I'm passing it props from app.js so how is it logial that I can route there?
+  
   render() {
    console.log(this.state.inventory)
     
     return (
     
       <div className='app'>
-     {routes}
+      {routes}
       <Header />
         <main className='mainBox'>
        
           <Dashboard 
           getInventory={this.getInventory} 
            inventory={this.state.inventory} />
-            <Form getInventory={this.getInventory} />
+            <Form  />
         </main> 
-  
+      
       </div>
       
 
