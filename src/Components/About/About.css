@@ -1,15 +1,18 @@
 .about{
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRAV1Nb6OxUflv_--yYMP_BrRPy_yuK_Tt9yw&usqp=CAU');
     height: 50vh;
-    color: orange;
+    color: red;
     font-size: 40px;
-    display:block; 
+    display:grid;
+    grid-template-columns: ;
 }
  
 .span1{
     text-decoration: underline;
     font-weight: 900;
-    color: purple;
+    color: rgb(3, 3, 3);
+    text-shadow: aliceblue;
+    
 }
 .big-button{
     height: 50px;
